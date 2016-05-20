@@ -1,0 +1,29 @@
+{
+  "name": "pinbao",
+  "homepage": "home.html",
+  "authors": [
+    "congcong <740707701@qq.com>"
+  ],
+  "description": "聘宝",
+  "main": "index.html",
+  "keywords": [
+    "pinbao"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "angular": "^1.5.5",
+    "requirejs": "^2.2.0",
+    "underscore": "^1.8.3",
+    "angular-md5": "^0.1.10",
+    "angular-route": "^1.5.5"
+  }
+}
