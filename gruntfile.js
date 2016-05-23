@@ -95,11 +95,11 @@ module.exports = function(grunt){
 			},
 			service: {
 				files:['service/script/**/*.js'],
-				tasks:["lessChange","concat"]
+				tasks:["concat"]
 			},
 			controller: {
 				files:['controller/script/**/*.js'],
-				tasks:["lessChange","concat"]
+				tasks:["concat"]
 			}
 		},
 		//js代码检查

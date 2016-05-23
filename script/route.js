@@ -1,8 +1,9 @@
+'use strict';
 define([
 	"angularRoute",
 	"app",
 	"homeCtrl"
-	],function(app){
+	],function(__angularRoute,app){
 		var initRoute = function(){
 			app.config(["$routeProvider",function($routeProvider){
 				console.log("init route....");
