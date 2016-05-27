@@ -3,4 +3,5 @@ node_modules/
 controller/dist/
 directive/dist/
 filter/dist/
+service/dist/
 css/bundle.css
