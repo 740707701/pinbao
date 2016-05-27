@@ -1,5 +1,13 @@
 @import "../../less/colors.less";
 headbar {
+	.logo {
+		height: 60px;
+		font-size:22px;
+		display: inline-block;
+		i {
+			font-size: 46px!important;
+		}
+	}
 	.bgcontent {
 		width:100%;
 		height:60px;
@@ -7,13 +15,7 @@ headbar {
 		padding-left:10px;
 		background-color:@main-color;
 		.logo {
-			height: 60px;
-			font-size:22px;
-			display: inline-block;
 			color:#fff;
-			i {
-				font-size: 46px!important;
-			}
 		}
 		.content {
 			width:1200px;
@@ -81,6 +83,42 @@ headbar {
 			.user-info {
 				.username {
 					margin-left:10px;
+				}
+			}
+		}
+	}
+	.bg {
+		width:100%;
+		height:60px;
+		line-height: 60px;
+		background-color:#fff;
+		border:1px solid @main-color;
+		.content {
+			width:1200px;
+			margin:0 auto;
+			min-width: 1200px;
+			.logo {
+				color:@main-color;
+			}
+			.btn-box {
+				margin-top:8px;
+				.btn {
+					width: 100px;
+					height:40px;
+					line-height: 40px;
+					text-align: center;
+					font-size: 16px;
+					border-radius:5px;
+				}
+				.login-btn {
+					background-color:@main-color;
+					color:#fff;
+				}
+				.register-btn {
+					background-color:#fff;
+					border:1px solid @main-color;
+					color:@main-color;
+					margin-left:15px;
 				}
 			}
 		}

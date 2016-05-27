@@ -6,6 +6,6 @@ define(["app"],function(app){
 			link:function($scope,$element,$attrs){
 				//
 			}
-		}
-	}])
-})
+		};
+	}]);
+});

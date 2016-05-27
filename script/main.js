@@ -15,13 +15,23 @@ requirejs.config({
 
 		//ctrl
 		"homeCtrl":"./controller/script/homeCtrl",
+		"jucaiCtrl":"./controller/script/jucaiCtrl",
+		"zhaocaiCtrl":"./controller/script/zhaocaiCtrl",
+		"addjobCtrl":"./controller/script/addjobCtrl",
+		"addsiteCtrl":"./controller/script/addsiteCtrl",
 
 		//directive
 		"home":"./directive/script/home",
 		"headbar":"./directive/script/headbar",
 		"leftsidebar":"./directive/script/leftsidebar",
+		"jucai":"./directive/script/jucai",
+		"zhaocai":"./directive/script/zhaocai",
+		"addjob":"./directive/script/addjob",
+		"addsite":"./directive/script/addsite",
 
 		//service 
+		"user":"./service/script/user",
+		"resume":"./service/script/resume",
 
 		"cookie":"bower_components/cookie/cookie.min",   
 		"jquery":"bower_components/jquery/dist/jquery.min"

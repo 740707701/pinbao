@@ -5,6 +5,7 @@ define(["app"],function(app){
 			templateUrl:"../directive/html/headbar.html",
 			link:function($scope,$element,$attrs){
 				//
+				$scope.isHome = true;
 			}
 		}
 	}]);
