@@ -5,6 +5,7 @@ define(["app"],function(app){
 			templateUrl:"../directive/html/home.html",
 			link:function($scope,$element,$attrs){
 				//
+				$scope.loginBox = true;
 			}
 		};
 

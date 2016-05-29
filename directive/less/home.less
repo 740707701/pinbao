@@ -1,10 +1,138 @@
 @import "../../less/colors.less";
 home {
-	.banner {
-		width:100%;
-		height:700px;
-		background-image: url("../images/banner_01.png");
-		background-repeat: no-repeat;
-		background-size: 100%;
+	.wrap {
+		min-width:1200px;
+		margin:0 auto;
+		overflow-x: scroll;
+		font-family: "微软雅黑";
+		.banner {
+			img {
+				width:100%;
+				height:auto;
+				display: block;
+			}
+		}
+		.content {
+			width:1200px;
+			margin:0 auto;
+		}
+		.wid50 {
+			width:50%;
+			text-align:center;
+		}
+		.wid100 {
+			width:100%;
+			text-align:center;
+		}
+		.font28 {
+			font-size: 28px;
+		}
+		.font18 {
+			font-size:18px;
+			margin-top:15px;
+		}
+		.banner_one {
+			position: relative;
+			.banner_text {
+				color:#fff;
+				position: absolute;
+				top:30%;
+				left:0;
+				.btn_nav {
+					div {
+						width:50px;
+						height:30px;
+						line-height:30px;
+						text-align:center;
+						display: inline-block;
+					}
+				}
+			}
+		}
+		.content_one {
+			margin:30px auto;
+			.iconfont50 {
+				font-size:50px;
+				color:@main-color;
+			}
+			.title {
+				width:100%;
+				text-align:center;
+			}
+			ul {
+				margin-top:30px;
+				display:inline-block;
+				li {
+					float:left;
+					width:300px;
+					height:auto;
+					text-align:center;
+					.icon {
+						width:98px;
+						height:98px;
+						line-height:98px;
+						border:1px solid @main-color;
+						border-radius:50px;
+						display: inline-block;
+					}
+					.icon_title {
+						font-size:20px;
+						margin:10px 0;
+					}
+					p {
+						line-height:24px;
+						padding:0 30px;
+					}
+				}
+			}
+		}
+		.content_two {
+			margin:30px auto;
+			.content_left {
+			}
+			.content_right {
+				.title {
+					margin-top:150px;
+					font-size: 30px;
+				}
+				p {
+					margin-top:20px;
+				}
+			}
+		}
+		.content_three {
+			.content_left {
+				.title {
+					margin-top:150px;
+					font-size: 30px;
+				}
+				p {
+					margin-top:20px;
+				}
+			}
+			.content_right {
+			}
+		}
+		.banner_bottom {
+			position:relative;
+			margin-top:30px;
+			.desic {
+				font-size:30px;
+				color:#e55d56;
+				position: absolute;
+				top:45px;
+				left:50px;
+			}
+		}
+		.footer {
+			width:100%;
+			height:30px;
+			line-height: 30px;
+			text-align:center;
+			background-color:#f1f1f1;
+			p {
+				font-size:14px;
+			}
+		}
 	}
 }
