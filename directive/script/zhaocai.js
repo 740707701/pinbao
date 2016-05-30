@@ -1,4 +1,5 @@
 define(["app",
+		"confirmlogin",
 		"resume"
 	],function(app){
 	app.directive("zhaocai",["resumeService","$rootScope",function(resumeService,$rootScope){
@@ -7,7 +8,6 @@ define(["app",
 			templateUrl:"../directive/html/zhaocai.html",
 			link:function($scope,$element,$attrs){
 				//
-				$rootScope.isLogin = true;
 			}
 		};
 	}]);

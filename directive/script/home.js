@@ -1,6 +1,7 @@
 define(["app",
-		"user"
-	],function(app){
+		"user",
+		"cookie"
+	],function(app,cookie){
 	app.directive("home",["userService","$rootScope","$location",function(userService,$rootScope,$location){
 		return {
 			restrict:"E",
@@ -14,10 +15,12 @@ define(["app",
 					if(!$scope.username || !$scope.password){return;}
 					userService.login($scope.username,$scope.password)
 					.success(function(data){
-						//console.log("login",data);
+						console.log("login",data);
 						$location.path("/zhaocai");
 						$rootScope.isLogin = true;
 						$rootScope.username = $scope.username;
+						userService.set("username",$scope.username);
+						userService.token(data.token);
 					})
 					.error(function(err,status,data){
 						alert("用户名或密码错误,请重新登录");

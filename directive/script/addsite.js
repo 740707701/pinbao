@@ -1,4 +1,5 @@
 define(["app",
+		"confirmlogin",
 		"resume"
 	],function(app){
 	app.directive("addsite",["resumeService","$rootScope",function(resumeService,$rootScope){

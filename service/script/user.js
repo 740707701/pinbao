@@ -44,14 +44,17 @@ define(["app",
 		};
 
 		//注销
-		this.logout = function(){
+		this.logout = function(token){
 			return $http({
 				url:urlPrefix+urlDict.logout,
-				method:methodDict.post
+				method:methodDict.post,
+				data:{
+					"token":token
+				}
 			});
 			cookie.remove("token");
 			cookie.remove("username");
-			cookie.remove("passeord");
+			//cookie.remove("password");
 		};
 
 		//获取指定用户信息
@@ -83,6 +86,7 @@ define(["app",
 		};
 
 		//token
+		//var token = "TlkX3CkOJx6bSlg7bqQAdOAWFx79mrJJv8KlXmWcVOTEU60EJxo7eg3wFRpFIpbQ";
 		this.token = function(token){
 			if(token==undefined){
 				return cookie.get("token");

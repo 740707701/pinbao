@@ -29,6 +29,8 @@ requirejs.config({
 		"addjob":"./directive/script/addjob",
 		"addsite":"./directive/script/addsite",
 
+		"confirmlogin":"./directive/script/confirmlogin",
+
 		//service 
 		"user":"./service/script/user",
 		"resume":"./service/script/resume",
