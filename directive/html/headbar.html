@@ -1,14 +1,14 @@
-<div class="bgcontent" ng-show="isHome==false">
-	<div class="logo curp fl">
+<div class="bgcontent" ng-show="$root.isLogin==true">
+	<div class="logo curp fl" ng-click="linkTo('/zhaocai')">
 		<i class="iconfont">&#xe60d;</i>
 		聘宝
 	</div>
 	<div class="content">
 		<div class="btn-box fl">
-			<div class="add-btn curp fl">
+			<div class="add-btn curp fl" ng-click="linkTo('/addjob')">
 				<i class="iconfont fr">&#xe608;</i>发布新职位
 			</div>
-			<div class="add-btn curp fl">
+			<div class="add-btn curp fl" ng-click="linkTo('/addsite')">
 				<i class="iconfont fr">&#xe608;</i>添加新渠道
 			</div>
 		</div>
@@ -20,11 +20,11 @@
 			<div class="user-img fl curp">
 				<i class="iconfont">&#xe609;</i>
 			</div>
-			<div class="username fl curp">15995638423</div>
+			<div class="username fl curp">{{$root.username}}</div>
 		</div>
 	</div>
 </div>
-<div class="bg" ng-show="isHome==true">
+<div class="bg" ng-show="$root.isLogin==false">
 	<div class="content">
 		<div class="logo curp fl">
 			<i class="iconfont">&#xe60d;</i>

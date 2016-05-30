@@ -1,11 +1,13 @@
 define(["app"],function(app){
-	app.directive("headbar",[function(){
+	app.directive("headbar",["$rootScope","$location",function($rootScope,$location){
 		return {
 			restrict:"E",
 			templateUrl:"../directive/html/headbar.html",
 			link:function($scope,$element,$attrs){
 				//
-				$scope.isHome = true;
+				$scope.linkTo = function(path){
+					$location.path(path);
+				};
 			}
 		}
 	}]);

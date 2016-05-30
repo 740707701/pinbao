@@ -3,7 +3,6 @@ home {
 	.wrap {
 		min-width:1200px;
 		margin:0 auto;
-		overflow-x: scroll;
 		font-family: "微软雅黑";
 		.banner {
 			img {
@@ -31,20 +30,45 @@ home {
 			font-size:18px;
 			margin-top:15px;
 		}
-		.banner_one {
+		.banner_one,.banner_two {
 			position: relative;
-			.banner_text {
-				color:#fff;
+			.text_box {
 				position: absolute;
 				top:30%;
-				left:0;
-				.btn_nav {
-					div {
-						width:50px;
+				left:50%;
+				.banner_text {
+					margin-left:-50%;
+					color:#fff;
+					.btn_nav {
+						margin-bottom:10px;
+						span {
+							width:50px;
+							height:36px;
+							line-height:36px;
+							text-align:center;
+							display: inline-block;
+							margin-right: 10px;
+						}
+						.current {
+							border-bottom:2px solid @main-color;
+						}
+					}
+					input,.btn {
+						width:250px;
 						height:30px;
 						line-height:30px;
-						text-align:center;
-						display: inline-block;
+						margin-bottom:15px;
+					}
+					input {
+						padding-left:10px;
+						outline: 0;
+					}
+					.btn {
+						width:260px;
+						text-align: center;
+						background-color:@main-color;
+						color:#fff;
+						margin:0 auto;
 					}
 				}
 			}
@@ -88,19 +112,27 @@ home {
 		}
 		.content_two {
 			margin:30px auto;
-			.content_left {
-			}
-			.content_right {
-				.title {
-					margin-top:150px;
-					font-size: 30px;
+			.content_box {
+				width:100%;
+				display:inline-block;
+				.content_left {
 				}
-				p {
-					margin-top:20px;
+				.content_right {
+					.title {
+						margin-top:150px;
+						font-size: 30px;
+					}
+					p {
+						margin-top:20px;
+					}
 				}
 			}
 		}
 		.content_three {
+			.content_box {
+				width:100%;
+				display: inline-block;
+			}
 			.content_left {
 				.title {
 					margin-top:150px;

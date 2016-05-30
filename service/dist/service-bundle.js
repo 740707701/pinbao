@@ -238,13 +238,14 @@ define(["app",
 		};
 
 		//注册
-		this.register = function(email,password,role_type){
+		this.register = function(email,password,name,role_type){
 			return $http({
 				url:urlPrefix+urlDict.register,
 				method:methodDict.post,
 				data: {
 					"email":email,
 					"password":password,
+					"name":name,
 					"role_type":role_type
 				}
 			});
