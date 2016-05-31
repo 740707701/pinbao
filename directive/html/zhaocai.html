@@ -1,3 +1,32 @@
 <div class="zhaocai" confirmlogin>
-	<div>招财宝</div>
+	<div class="jobList">
+		<div class="title">招聘职位</div>
+		<div class="job_title curp" ng-repeat="n in jobData" ng-click="jobDetail(n.job_id)">{{n.job_title}}
+			<span class="count">{{n.count}}</span>
+		</div>
+	</div>
+	<div class="jobDetail">
+		<div class="resume-box">
+			<div class="resume-title">职位信息&nbsp;:&nbsp;{{jobDetailData.job_title}}</div>
+			<div class="resume-content">
+				<ul>
+					<li>职位年薪 : {{jobDetailData.salary}}</li>
+					<li>工作地点 : {{jobDetailData.location}}</li>
+					<li>年龄要求 : {{jobDetailData.age}}</li>
+					<li>性别 : {{jobDetailData.gender}}</li>
+					<li>工作年限 : {{jobDetailData.experience}}</li>
+					<li>学历要求 : {{jobDetailData.education}}</li>
+					<li>更新时间 : {{jobDetailData.update_time}}</li>
+					<li>发布时间 : {{jobDetailData.create_time}}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="resume-type">
+			<ul>
+				<li class="curp" ng-repeat="n in typeData" ng-click="setTypeIndex(n.type)" ng-class="{'current':typeIndex==n.type}">{{n.title}}
+					<span class="count">{{n.count}}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
 </div>

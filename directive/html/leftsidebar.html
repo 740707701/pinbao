@@ -1,6 +1,6 @@
 <div class="leftsidebar">
 	<div class="content">
-		<div class="icon curp" ng-repeat="n in data" ng-mouseover="n.showIndex=index" ng-mouseout="n.showIndex=''" ng-click="linkTo(n.url)" ng-class="{'current':n.showIndex==index}">
+		<div class="icon curp" ng-repeat="(i,n) in data" ng-mouseover="n.showIndex=index" ng-mouseout="n.showIndex=''" ng-click="linkTo(n.url)" ng-class="{'current':index == i}">
 			<i class="iconfont">{{n.icon}}</i>
 			<span class="title title_pos" ng-show="n.showIndex==index">{{n.text}}</span>
 		</div>		

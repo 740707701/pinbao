@@ -34,7 +34,10 @@ define(["app",
 		this.status = function(){
 			return $http({
 				url:urlPrefix+urlDict.status,
-				method:method.get
+				method:methodDict.get,
+				params:{
+					"token":userService.token()
+				}
 			});
 		};
 		/*
@@ -45,7 +48,11 @@ define(["app",
 		this.types = function(job){
 			return $http({
 				url:urlPrefix+urlDict.types,
-				method:methodDict.get
+				method:methodDict.get,
+				params:{
+					"token":userService.token(),
+					"job":job
+				}
 			});
 		};
 		/*
@@ -63,17 +70,21 @@ define(["app",
 		*/
 
 		//获取人才库列表
-		this.collects = function(params){
+		this.collects = function(job,type,keyword,status,tag,start,limit){
 			var params = {
+				"token":userService.token(),
 				"job":job,
 				"type":type,
 				"keyword":keyword,
-				"status":atatus,
-				"tag":tag
+				"status":status,
+				"tag":tag,
+				"start":start,
+				"limit":limit
 			};
 			return $http({
 				url:urlPrefix+urlDict.collects,
-				method:methodDict.get
+				method:methodDict.get,
+				params:params
 			})
 		};
 		//获取标签列表
@@ -86,17 +97,19 @@ define(["app",
 		//修改人才状态
 		this.collectId = function(status){
 			return $http({
-				url:urlPrefix+urlDict.collectId,
+				url:urlPrefix+urlDict.collectId.replace("collect_id",collectId),
 				method:methodDict.put
 			})
 		};
 		//添加备注
 		this.addNote = function(note){
-			var note = {"note":note};
 			return $http({
-				url:urlPrefix+urlDict.collectId,
+				url:urlPrefix+urlDict.collectId.replace("collect_id",collectId),
 				method:methodDict.put,
-				data:note
+				params: {
+					"token":userService.token(),
+					"note":note
+				}
 			});
 		};
 		/*
@@ -107,7 +120,7 @@ define(["app",
 		//向一个简历添加一个或多个tag
 		this.addTags = function(tags){
 			return $http({
-				url:urlPrefix+urlDict.addTags,
+				url:urlPrefix+urlDict.addTags.replace("collect_id",collectId),
 				method:methodDict.post
 			})
 		};
@@ -119,7 +132,7 @@ define(["app",
 		//向一个简历删除一个或多个tag
 		this.deleteTags = function(tag){
 			return $http({
-				url:urlPrefix+urlDict.deleteTags,
+				url:urlPrefix+urlDict.deleteTags.replace("collect_id",collectId),
 				method:methodDict.delete
 			})
 		};
@@ -131,59 +144,66 @@ define(["app",
 		this.jobs = function(status){
 			return $http({
 				url:urlPrefix+urlDict.jobs,
-				method:methodDict.get
+				method:methodDict.get,
+				params: {
+					"token":userService.token(),
+					"status":status
+				}
 			})
 		};
 
-		//发布新职位
-		this.addJobs = function(params){
-			var params = {
-				"desc":desc,
-				"education":education,
-				"experience":experience,
-				"gender":gender,
-				"job_title":job_title,
-				"location":location,
-				"salary":salary,
-				"status":status
-			};
+		//发布新职位 //报错Missing argument token
+		this.addJobs = function(desc,education,experience,gender,job_title,location,salary,status){
 			return $http({
 				url:urlPrefix+urlDict.jobs,
 				method:methodDict.post,
-				data: params
+				data: {
+					"desc":desc,
+					"education":education,
+					"experience":experience,
+					"gender":gender,
+					"job_title":job_title,
+					"location":location,
+					"salary":salary,
+					"status":status,
+					"token":userService.token()
+				}
 			})
 		};
 
 		//获取职位详情
-		this.jobDetail = function(){
+		this.jobDetail = function(jobId){
 			return $http({
-				url:urlPrefix+urlDict.jobsId,
-				method:methodDict.get
+				url:urlPrefix+urlDict.jobId.replace("{job_id}",jobId),
+				method:methodDict.get,
+				params:{
+					"token":userService.token(),
+				}
 			})
 		};
 
-		//修改职位
-		this.editJob = function(params){
-			var params = {
-				"desc":desc,
-				"education":education,
-				"experience":experience,
-				"gender":gender,
-				"job_title":job_title,
-				"location":location,
-				"salary":salary
-			};
+		//修改职位 //报错Missing argument token
+		this.editJob = function(jobId,desc,education,experience,gender,job_title,location,salary){
 			return $http({
-				url:urlPrefix+urlDict.jobId,
+				url:urlPrefix+urlDict.jobId.replace("{job_id}",jobId),
 				method:methodDict.put,
-				data:params
+				data: {
+					"desc":desc,
+					"education":education,
+					"experience":experience,
+					"gender":gender,
+					"job_title":job_title,
+					"location":location,
+					"salary":salary,
+					"token":userService.token()
+				}
 			})
 		};
 
 		//删除职位
-		this.deleteJob = function(){
+		this.deleteJob = function(jobId){
 			return $http({
-				url:urlPrefix+urlDict.jobId,
+				url:urlPrefix+urlDict.jobId.replace("{job_id}",jobId),
 				method:methodDict.delete
 			})
 		};
@@ -193,7 +213,10 @@ define(["app",
 		this.sites = function(){
 			return $http({
 				url:urlPrefix+urlDict.sites,
-				method:methodDict.get
+				method:methodDict.get,
+				params:{
+					"token":userService.token()
+				}
 			});
 		};
 
@@ -205,7 +228,8 @@ define(["app",
 				data: {
 					"username":username,
 					"password":password,
-					"rand":rand
+					"rand":rand,
+					"token":userService.token()
 				}
 			});
 		};

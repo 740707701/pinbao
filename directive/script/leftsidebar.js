@@ -4,7 +4,7 @@ define(["app"],function(app){
 			restrict:"E",
 			templateUrl:"../directive/html/leftsidebar.html",
 			link:function($scope,$element,$attrs){
-
+				$scope.index = $attrs.index;
 				//
 				$scope.linkTo = function(path){
 					$location.path(path);
