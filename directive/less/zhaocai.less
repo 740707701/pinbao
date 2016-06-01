@@ -7,6 +7,9 @@ zhaocai {
     left: 60px;
     right: 0;
     bottom: 0;
+    a {
+    	color:@main-color-text;
+    }
 	.zhaocai {
 		.jobList {
 			width:200px;
@@ -15,6 +18,8 @@ zhaocai {
 			position: absolute;
 			top:0px;
 			left:0px;
+			right:0;
+			bottom:0;
 			.title,.job_title {
 				width:180px;
 				height:50px;
@@ -44,9 +49,9 @@ zhaocai {
 			width:100%;
 			height:auto;
 			.resume-box {
+				width:100%;
 				border:1px solid @main-color-border;
 				.resume-title {
-					width:100%;
 					height:30px;
 					line-height: 30px;
 					text-align: left;
@@ -69,7 +74,9 @@ zhaocai {
 				}
 			}
 			.resume-type {
-				ul {
+				margin-top:10px;
+				.type-list {
+					/* width:100%; */
 					display:inline-block;
 					border-bottom:1px solid @main-color-border;
 					li {
@@ -90,10 +97,78 @@ zhaocai {
 						}
 					}
 					.current {
-						border-left: 1px solid @main-color-border;
-						border-right:1px solid @main-color-border;
-						border-top-left-radius: 3px;
-						border-top-right-radius: 3px;
+						border: 1px solid @main-color-border;
+						border-bottom:none;
+						border-top-left-radius: 5px;
+						border-top-right-radius: 5px;
+					}
+				}
+				.resume-list {
+					width:100%;
+					height:auto;
+					.list-box {
+						width:100%;
+						display: inline-block;
+						margin-top:10px;
+						li {
+							border:1px solid @main-color-border;
+							margin-bottom:10px;
+							.resume-info {
+								.flex-box {
+									display:-moz-box; /* Firefox */
+									display:-webkit-box; /* Safari and Chrome */
+									display: box;
+									span,img,a {
+										-moz-box-flex:1.0; /* Firefox */
+										-webkit-box-flex:1.0; /* Safari and Chrome */
+										box-flex:1.0;
+									}
+								}
+								.info-title {
+									background-color: @main-color-bg;
+									.title-text {
+										padding:0 20px;
+										height:30px;
+										line-height: 30px;
+										color:@main-color-text;
+										span,a,img{
+											display: block;
+										}
+									}
+								}
+								.info-box {
+									padding:0 20px;
+									height:70px;
+									line-height: 70px;
+									img {
+										width:50px;
+										height:50px;
+										line-height: 50px;
+										border:1px solid @main-color-border;
+										border-radius:25px;
+										margin-right:15px;
+										margin-top:10px;
+									}
+									span,a{
+										display: block;
+									}
+									.add-btn {
+										width:80px;
+										height:30px;
+										line-height: 30px;
+										text-align: center;
+										border:1px solid @main-color;
+										border-radius:3px;
+										color:@main-color-text;
+										display: inline-block;
+									}
+									.add-btn:hover {
+										background-color:@main-color;
+										color:#fff;
+									}
+								}
+							}
+						}
 					}
 				}
 			}

@@ -45,13 +45,13 @@ define(["app",
 			不传job，获取全部职位的统计；传job 获取特定职位的统计
 		*/
 		//查看简历的类型与数量
-		this.types = function(job){
+		this.types = function(jobId){
 			return $http({
 				url:urlPrefix+urlDict.types,
 				method:methodDict.get,
 				params:{
 					"token":userService.token(),
-					"job":job
+					"job":jobId
 				}
 			});
 		};
@@ -59,8 +59,8 @@ define(["app",
 			job=1                           #按职位分组
 			type=1                          #按自荐、意向、推荐、搜索过滤
 			keyword=web                     #按关键字搜索
-			status=1                        #按状态分组：待沟通、待面试等
-			tag=php&tag=good&tag=beauty     #传多个即选中多个tag 过滤
+			status=1 (不传)                       #按状态分组：待沟通、待面试等
+			tag=php&tag=good&tag=beauty (不传)    #传多个即选中多个tag 过滤
 
 			分页参数：
 			start=0
@@ -70,14 +70,12 @@ define(["app",
 		*/
 
 		//获取人才库列表
-		this.collects = function(job,type,keyword,status,tag,start,limit){
+		this.collects = function(job,type,keyword,start,limit){
 			var params = {
 				"token":userService.token(),
 				"job":job,
 				"type":type,
 				"keyword":keyword,
-				"status":status,
-				"tag":tag,
 				"start":start,
 				"limit":limit
 			};
@@ -95,16 +93,19 @@ define(["app",
 			})
 		};
 		//修改人才状态
-		this.collectId = function(status){
+		this.collectId = function(collectId){
 			return $http({
-				url:urlPrefix+urlDict.collectId.replace("collect_id",collectId),
-				method:methodDict.put
+				url:urlPrefix+urlDict.collectId.replace("{collect_id}",collectId),
+				method:methodDict.put,
+				data: {
+					"token":userService.token()
+				}
 			})
 		};
 		//添加备注
 		this.addNote = function(note){
 			return $http({
-				url:urlPrefix+urlDict.collectId.replace("collect_id",collectId),
+				url:urlPrefix+urlDict.collectId.replace("{collect_id}",collectId),
 				method:methodDict.put,
 				params: {
 					"token":userService.token(),
@@ -120,8 +121,11 @@ define(["app",
 		//向一个简历添加一个或多个tag
 		this.addTags = function(tags){
 			return $http({
-				url:urlPrefix+urlDict.addTags.replace("collect_id",collectId),
-				method:methodDict.post
+				url:urlPrefix+urlDict.addTags.replace("{collect_id}",collectId),
+				method:methodDict.post,
+				data: {
+					"token":userService.token()
+				}
 			})
 		};
 		/*
@@ -132,8 +136,11 @@ define(["app",
 		//向一个简历删除一个或多个tag
 		this.deleteTags = function(tag){
 			return $http({
-				url:urlPrefix+urlDict.deleteTags.replace("collect_id",collectId),
-				method:methodDict.delete
+				url:urlPrefix+urlDict.deleteTags.replace("{collect_id}",collectId),
+				method:methodDict.delete,
+				data: {
+					"token":userService.token()
+				}
 			})
 		};
 
@@ -204,7 +211,10 @@ define(["app",
 		this.deleteJob = function(jobId){
 			return $http({
 				url:urlPrefix+urlDict.jobId.replace("{job_id}",jobId),
-				method:methodDict.delete
+				method:methodDict.delete,
+				data: {
+					"token":userService.token()
+				}
 			})
 		};
 
@@ -238,7 +248,10 @@ define(["app",
 		this.deleteSites = function(){
 			return $http({
 				url:urlPrefix+urlDict.sites,
-				method:methodDict.delete
+				method:methodDict.delete,
+				data: {
+					"token":userService.token()
+				}
 			});
 		};
 	}]);

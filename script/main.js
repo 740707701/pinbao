@@ -28,6 +28,7 @@ requirejs.config({
 		"zhaocai":"./directive/script/zhaocai",
 		"addjob":"./directive/script/addjob",
 		"addsite":"./directive/script/addsite",
+		"pager":"./directive/script/pager",
 
 		"confirmlogin":"./directive/script/confirmlogin",
 

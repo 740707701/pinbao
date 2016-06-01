@@ -22,11 +22,36 @@
 			</div>
 		</div>
 		<div class="resume-type">
-			<ul>
-				<li class="curp" ng-repeat="n in typeData" ng-click="setTypeIndex(n.type)" ng-class="{'current':typeIndex==n.type}">{{n.title}}
+			<ul class="type-list">
+				<li class="curp" ng-repeat="(i,n) in typeData" ng-click="getCollects(n.type)">{{n.title}}
 					<span class="count">{{n.count}}</span>
 				</li>
 			</ul>
+			<div class="resume-list">
+				<ul class="list-box">
+					<li ng-repeat="n in collectsData">
+						<div class="resume-info">
+							<div class="info-title">
+								<div class="title-text flex-box">
+									<a href="{{n.resume_url}}">{{n.job_title||'无'}}</a>
+									<span>{{n.gender||'无'}}/{{n.education}}/{{n.residence||'无'}}</span>
+									<span>最近登录:{{n.time}}</span>
+								</div>
+							</div>
+							<div class="info-box flex-box">
+								<img ng-src="{{n.avatar_url}}" alt="" class="curp">
+								<span>{{n.name||'无'}}</span>
+								<span>{{n.desc||'他很懒,没写求职宣言'}}</span>
+								<span>来源:{{n.source||'无'}}</span>
+								<span>
+									<div class="add-btn curp" ng-click="addCandidate(n.collect_id)">加入候选</div>
+								</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
+		<pager></pager>
 	</div>
 </div>

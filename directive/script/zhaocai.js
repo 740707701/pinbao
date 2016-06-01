@@ -1,5 +1,6 @@
 define(["app",
 		"confirmlogin",
+		"pager",
 		"resume"
 	],function(app){
 	app.directive("zhaocai",["resumeService","$rootScope",function(resumeService,$rootScope){
@@ -23,16 +24,21 @@ define(["app",
 
 				//获取职位详细信息
 				$scope.jobDetail = function(jobId){
+					$scope.jobId  = jobId;
 					resumeService.jobDetail(jobId)
 					.success(function(data){
 						$scope.jobDetailData = data;
 						console.log("jobDetail",data);
+
+						//
+						$scope.getType();
+						$scope.getCollects(1);
 					})
 				};
 
 				//获取简历类型
 				$scope.getType = function(){
-					resumeService.types()
+					resumeService.types($scope.jobId)
 					.success(function(data){
 						$scope.typeData = data;
 						console.log("getType",data);
@@ -45,8 +51,8 @@ define(["app",
 					job=1                           #按职位分组
 					type=1                          #按自荐、意向、推荐、搜索过滤
 					keyword=web                     #按关键字搜索
-					status=1                        #按状态分组：待沟通、待面试等
-					tag=php&tag=good&tag=beauty     #传多个即选中多个tag 过滤
+					status=1 (不传)                     #按状态分组：待沟通、待面试等
+					tag=php&tag=good&tag=beauty (不传)     #传多个即选中多个tag 过滤
 
 					分页参数：
 					start=0
@@ -54,13 +60,33 @@ define(["app",
 
 					eg: /resume/collects?status=1&keyword=web&type=1&start=0&limit=10
 				*/
+				//获取不同类型的简历
 				$scope.getCollects = function(type){
-					resumeService.collects(1,2,$scope.keyword,1)
+					var job = $scope.jobId;
+					var type = type;
+					var status = '';
+					var tag = '';
+					var start = 0;
+					var limit = 5;
+					resumeService.collects(job,type,$scope.keyword,start,limit)
 					.success(function(data){
+						$scope.collectsData = data;
 						console.log("getCollects",data);
 					})
 				};
+				//加入候选
+				$scope.addCandidate = function(collectId){
+					resumeService.collectId(collectId)
+					.success(function(data){
+						$scope.collectIdData = data;
+						console.log("collectId",data);
+					})
+				};
 
+				//翻页
+				$scope.$on("prevPage",function(){
+					
+				});
 
 /***************************************************************************/
 				//测试API
