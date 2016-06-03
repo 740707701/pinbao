@@ -1,0 +1,112 @@
+<div>学习angular-validation</div>
+<div>-----</div>
+<p></p>
+<form action="" name="form">
+	<br>
+	<p>Form ($watch) <span style="color:red">默认valid-method为watch,可以自定义提示信息</span>
+	</p>
+	
+	<label for="required">Reruired</label>
+	<input type="text" name="requiredWatch"
+						ng-model="form.required"
+						validator="required"
+						id="required">
+						<span id="requiredWatch"></span>
+
+	<label for="url">Url</label>
+	<input type="text" class="form-control" 
+						name="urlWatch"
+						ng-model="form.url"
+						validator="required,url"
+						id="url">
+	
+	<label for="email">Email</label>
+	<input type="text" class="form-control" 
+						name="emailWatch"
+					 	ng-model="form.email"
+					 	validator="required,email"
+					 	email-error-message="Error Email"
+					 	email-success-message=" 对"
+					 	message-id="emailWatch"
+					 	id="email" >
+					 	<span id="emailWatch"></span>
+
+	<label for="number">Number</label>
+	<input type="text" 	class="form-control"
+						name="numberWatch"
+						ng-model="form.number"
+						validator="number"
+						email-error-message="Error Number"
+						email-success-message="Good Number"
+						message-id="numberWatch"
+						id="number">
+						<span id="numberWatch"></span>
+	<div></div>
+	<br>
+	<p>Form($blur)
+	<span style="color:red">不能自定义提示信息??</span></p>
+	<br>
+
+	<label for="name">Name</label>
+	<input type="text" name="requireBlur"
+						ng-model="form.required"
+						validator="required"
+						valid-method="blur"
+						email-error-message="请填写用户名"
+						email-success-message="对的"
+						id="name">
+
+	<label for="number">Number</label>
+	<input type="text" name="numberBlur"
+						ng-model="form.number"
+						validator="number"
+						valid-method="blur"
+						id="number">
+
+	<label for="email">Email</label>
+	<input type="text" name="emailBlur"
+						ng-model="form.email"
+						validator="email"
+						valid-method="blur"
+						id="email">
+
+	<div></div>
+	<br>
+
+</form>
+
+<form action="" name="Form3" id="form3">
+	<p>
+		<span style="color:red;">Form3 ($submit width callback)</span>
+	</p>
+	<div></div>
+	<label for="">required</label>
+	<input type="text" name="requireSubmit"
+						ng-model="form3.required"
+						validator="required"
+						valid-method="submit"
+						message-id="requireSubmit">
+	<label for="">url</label>
+	<input type="text" name="urlSubmit"
+						ng-model="form3.url"
+						validator="url"
+						valid-method="submit"
+						message-id="urlSubmit">
+	<label for="">Email</label>
+	<input type="text" name="emailSubmit"
+						ng-model="form3.email"
+						validator="email"
+						valid-method="submit"
+						message-id="emailSubmit">
+
+	<label for="">number</label>
+	<input type="text" name="numberSubmit"
+						ng-model="form3.number"
+						validator="number"
+						valid-method="submit"
+						message-id="numberSubmit">	
+
+	<button ng-click="form3.submit(Form3)">submit</button>
+	<button ng-click="form3.reset(Form3)">Reset</button>
+	<button ng-disabled="!form3.checkValid(Form3)">checkValid = {{form3.checkValid(Form3)}}</button>
+</form>

@@ -6,7 +6,8 @@ define([
 	"zhaocaiCtrl",
 	"jucaiCtrl",
 	"addjobCtrl",
-	"addsiteCtrl"
+	"addsiteCtrl",
+	"demoCtrl"
 	],function(__angularRoute,app){
 		var initRoute = function(){
 			app.config(["$routeProvider",function($routeProvider){
@@ -35,6 +36,10 @@ define([
 				.when("/addsite",{
 					templateUrl:"view/addsite.html",
 					controller:"addsiteCtrl"
+				})
+				.when("/demo",{
+					templateUrl:"view/demo.html",
+					controller:"demoCtrl"
 				})
 				.otherwise({
 

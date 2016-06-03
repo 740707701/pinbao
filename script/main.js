@@ -9,6 +9,9 @@ requirejs.config({
 		angularSanitize:"bower_components/angular-sanitize/angular-sanitize.min",
 		angularMd5:"bower_components/angular-md5/angular-md5.min",
 		underscore:"bower_components/underscore/underscore",
+		angularValidation:"bower_components/angular-validation/dist/angular-validation",
+		angularValidationRule:"bower_components/angular-validation/dist/angular-validation-rule",
+		angularBootstrap:"bower_components/angular-bootstrap/ui-bootstrap",
 
 		app:"script/app",
 		route:"script/route",
@@ -19,6 +22,7 @@ requirejs.config({
 		"zhaocaiCtrl":"./controller/script/zhaocaiCtrl",
 		"addjobCtrl":"./controller/script/addjobCtrl",
 		"addsiteCtrl":"./controller/script/addsiteCtrl",
+		"demoCtrl":"./controller/script/demoCtrl",
 
 		//directive
 		"home":"./directive/script/home",
@@ -29,6 +33,7 @@ requirejs.config({
 		"addjob":"./directive/script/addjob",
 		"addsite":"./directive/script/addsite",
 		"pager":"./directive/script/pager",
+		"demo":"./directive/script/demo",
 
 		"confirmlogin":"./directive/script/confirmlogin",
 
@@ -48,7 +53,10 @@ requirejs.config({
 		      deps: ["angular"],
 		      exports: 'angular-sanitize'
 		     },
-		"angularMd5":["angular"]
+		"angularMd5":["angular"],
+		"angularValidation":["angular"],
+		"angularValidationRule":["angular"],
+		"angularBootstrap":["angular"]
 	}
 });
 //开始逻辑
