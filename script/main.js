@@ -12,6 +12,7 @@ requirejs.config({
 		angularValidation:"bower_components/angular-validation/dist/angular-validation",
 		angularValidationRule:"bower_components/angular-validation/dist/angular-validation-rule",
 		angularBootstrap:"bower_components/angular-bootstrap/ui-bootstrap",
+		angualrUiSelect:"bower_components/angular-ui-select/dist/select",
 
 		app:"script/app",
 		route:"script/route",
@@ -56,7 +57,8 @@ requirejs.config({
 		"angularMd5":["angular"],
 		"angularValidation":["angular"],
 		"angularValidationRule":["angular"],
-		"angularBootstrap":["angular"]
+		"angularBootstrap":["angular"],
+		"angualrUiSelect":["angular"]
 	}
 });
 //开始逻辑

@@ -110,3 +110,48 @@
 	<button ng-click="form3.reset(Form3)">Reset</button>
 	<button ng-disabled="!form3.checkValid(Form3)">checkValid = {{form3.checkValid(Form3)}}</button>
 </form>
+
+<div style="margin-top:20px;color:blue">bootstrap datepicker</div>
+<form action="" name="formDate" id="formdate">
+	<div>
+		<!-- <input type="text" uib-datepicker-popup="dd-MMMM-yyyy" ng-model="formdate.dt" is-open="formdate.status.opened" datepicker-options="formdate.dateOptions" close-text="Close" validator="required" message-id="bootstrap"> -->
+		<!-- <input type="text" class="form-control m-b-20" uib-datepicker-popup="dd-MMMM-yyyy" ng-model="form7.dt" is-open="form7.status.opened"  datepicker-options="form7.dateOptions" close-text="Close" validator="required" message-id="bootstrap"/>
+		<span > -->
+			<!-- <button type="button" ng-click="formdate.open($event)"></button>
+					</span> -->
+	</div>
+</form>
+
+<div class="page-header">
+    <form name="Form7" id="form7">
+        <fieldset>
+            <div class="m-b-20">
+                <legend>Bootstrap DatePicker</legend>
+                <label>Required</label>
+                <div>
+                    <p class="input-group" style="width: 40%;">
+                    <input type="text" class="form-control m-b-20" uib-datepicker-popup="dd-MMMM-yyyy" ng-model="form7.dt" is-open="form7.status.opened"  datepicker-options="form7.dateOptions" close-text="Close" validator="required" message-id="bootstrap"/>
+
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="form7.open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    </p>
+                    <span id="bootstrap"></span>
+                </div>
+            </div>
+        </fieldset>
+	</form>
+</div>
+<div style="margin-top:20px;">AngularJs ui-select</div>
+<form action="" name="Form8" id="form8">
+	<div>
+		<ui-select ng-model="form8.country.selectd" theme="bootstrap" ng-disabled="form8.disabled" validator="required" message-id="ui-select">
+			<ui-select-match placeholder="hahahhaha" >{{$select.selected.name}}</ui-select-match>
+			<ui-select-choices repeat="country in form.countries" refresh-delay="0" >
+				<span ng-bind-html="country.name"></span>
+				<small ng-bind-html="country.code"></small>
+			</ui-select-choices>
+		</ui-select>
+	</div>
+</form>
+<p>*********************************************************************************</p>
