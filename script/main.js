@@ -24,6 +24,7 @@ requirejs.config({
 		"addjobCtrl":"./controller/script/addjobCtrl",
 		"addsiteCtrl":"./controller/script/addsiteCtrl",
 		"demoCtrl":"./controller/script/demoCtrl",
+		"bootstrapCtrl":"/controller/script/bootstrapCtrl",
 
 		//directive
 		"home":"./directive/script/home",
@@ -35,6 +36,7 @@ requirejs.config({
 		"addsite":"./directive/script/addsite",
 		"pager":"./directive/script/pager",
 		"demo":"./directive/script/demo",
+		"bootstrap":"./directive/script/bootstrap",
 
 		"confirmlogin":"./directive/script/confirmlogin",
 
