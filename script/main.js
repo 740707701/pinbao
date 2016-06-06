@@ -12,7 +12,9 @@ requirejs.config({
 		angularValidation:"bower_components/angular-validation/dist/angular-validation",
 		angularValidationRule:"bower_components/angular-validation/dist/angular-validation-rule",
 		angularBootstrap:"bower_components/angular-bootstrap/ui-bootstrap",
+		angularBootstrapTpls:"bower_components/angular-bootstrap/ui-bootstrap-tpls",
 		angualrUiSelect:"bower_components/angular-ui-select/dist/select",
+		bootstrap:"bower_components/bootstrap/dist/js/bootstrap",
 
 		app:"script/app",
 		route:"script/route",
@@ -60,6 +62,7 @@ requirejs.config({
 		"angularValidation":["angular"],
 		"angularValidationRule":["angular"],
 		"angularBootstrap":["angular"],
+		"angularBootstrapTpls":["angular"],
 		"angualrUiSelect":["angular"]
 	}
 });

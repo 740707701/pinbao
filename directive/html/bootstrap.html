@@ -1,1 +1,102 @@
-<div>this is bootstrap demo</div>
+<div style="margin-bottom:20px;color:red;">this is bootstrap demo</div>
+<p></p>
+<span uib-dropdown on-toggle="toggled(open)">
+	<a href="" id="simple-dropdown" uib-dropdown-toggle>dropdown</a>
+	<ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+		<li ng-repeat="choice in items">
+			<a href>{{choice}}</a>
+		</li>
+	</ul>
+</span>
+
+<div class="btn-group" uib-dropdown is-open="status.isopen">
+	<button id="single-button" type="botton" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">Button dropdown
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" uib-dropdown-menu role="menu">
+		<li class="menu-item">
+			<a href="">Action</a>
+		</li>
+		<li class="menu-item">
+			<a href="">Another action</a>
+		</li>
+		<li class="menu-item">
+			<a href="">something else here</a>
+		</li>
+		<li class="divider"></li>
+		<li class="menuitem">
+			<a href="">Separated link</a>
+		</li>
+	</ul>
+</div>
+
+<p>datepicker</p>
+<pre>Selected date is: <em>{{dt|date:'fullDate'}}</em></pre>
+<h4>Inline</h4>
+<div style="display:inline-block;min-height:290px;">
+	<uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></uib-datepicker>
+
+	<hr>
+	<button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
+	<button type="button" class="btn btn-sm btn-default" ng-click="setDate(2009,7,24)">set date</button>
+	<button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
+	<button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" uib-tooltip = "After today restriction">Min date</button>
+</div>
+<p>pager</p>
+	<uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" rotate="false"></uib-pagination>
+	<pre>Page:{{bigCurrentPage}}/{{numberPage}}</pre>
+
+<p>tabs</p>
+  <form name="outerForm" class="tab-form-demo">
+    <uib-tabset active="activeForm">
+      <uib-tab index="0" heading="Form Tab">
+        <ng-form name="nestedForm">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" required ng-model="model.name"/>
+          </div>
+        </ng-form>
+      </uib-tab>
+      <uib-tab index="1" heading="Tab One">
+        Some Tab Content
+      </uib-tab>
+      <uib-tab index="2" heading="Tab Two">
+        More Tab Content
+      </uib-tab>
+    </uib-tabset>
+  </form>
+
+<p>Alert</p>
+
+
+<p>布局</p>
+<span style="color:red">contriner-fluid 是指流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局</span>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="col-sm-1 col-md-1 col-xs-1">
+			阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘
+		</div>
+		<div class="col-sm-2 col-md-2 col-xs-2">
+		哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+		哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+		</div>
+		<div class="col-sm-9 col-md-9 col-xs-9">
+			选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vf选的vfvk选的vfvk
+		</div>
+	</div>
+</div>
+<span style="color:red;">container固定布局固定布局固定布局固定布局固定布局固定布局固定布局固定布局固定布局固定布局固定布局固定布局固定布局固定布局</span>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-1 col-md-1 col-xs-1">
+			阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘
+		</div>
+		<div class="col-sm-2 col-md-2 col-xs-2">
+		哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+		哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+		</div>
+		<div class="col-sm-9 col-md-9 col-xs-9">
+			选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选
+		</div>
+	</div>
+</div>
