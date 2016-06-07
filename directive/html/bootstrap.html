@@ -44,7 +44,7 @@
 </div>
 <p>pager</p>
 	<uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" rotate="false"></uib-pagination>
-	<pre>Page:{{bigCurrentPage}}/{{numberPage}}</pre>
+	<pre>Page:{{bigCurrentPage}}/{{numPages}}</pre>
 
 <p>tabs</p>
   <form name="outerForm" class="tab-form-demo">
@@ -66,7 +66,60 @@
     </uib-tabset>
   </form>
 
+ <p>Collapsed</p>
+<button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapsed</button>
+<hr>
+<div uib-collapse="isCollapsed">
+	<div class="well well-lg">some content</div>
+</div>
+
+<p>Modal</p>
+<!-- <div class="modal-header">
+	<h3 class="modal-title">I'm a modal!</h3>
+</div>
+<div class="modal-body">
+	<ul>
+		<li ng-repeat="item in items">
+			<a href="" ng-click="$event.preventDefault();selected.item = item">{{item}}</a>
+		</li>
+	</ul>
+	Selected: <b>{{selected.item}}</b>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+	<button class="btn btn-waring" type="button" ng-click="cancel()">cancel</button>
+</div>
+
+<button type="button" class="btn btn-default "ng-click="open()">open me</button> 
+<button type="button" class="btn btn-default "ng-click="open('lg')">Large Model</button> 
+<button type="button" class="btn btn-default "ng-click="open('sm')">Small Model</button> 
+<button type="button" class="btn btn-default "ng-click="toggleAnimation()">Toggle Animation ({{animationsEnabled}})</button> 
+<div ng-show="selected">Selected from a model :{{selected}}</div> -->
+
+<p>progressbar</p>
+<button type="button" ng-click="random()">Randomize</button>
+<uib-progressbar max="max" value="dynamic">
+	<span style="color:white;white-space:nowrap;">{{dynamic}}/{{max}}</span>
+</uib-progressbar>
+<uib-progressbar animation="false" value="dynamic" type="success">
+	<b>{{dynamic}}%</b>
+</uib-progressbar>
+<uib-progressbar class="progress-striped active" value="dynamic" type="{{;type}}" >{{type}}
+	<i ng-show="showWarning">Watch out</i>
+</uib-progressbar>
+
+
 <p>Alert</p>
+<!--<script type="text/ng-template" id="alert.html">
+	<div class="alert" style="background-color:#fa39c3;color:white" role="alert">
+		<div ng-tranasclude></div>
+	</div>
+</script>-->
+<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+<button type="button" class="btn btn-default" ng-click="addAlert()">Add alert</button>
+<uib-alert templateUrl="alert.html">A happly alert!</uib-alert>
+
+
 
 
 <p>布局</p>
@@ -74,11 +127,11 @@
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="col-sm-1 col-md-1 col-xs-1">
-			阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘
+			阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿阿潘阿潘阿潘阿潘阿潘阿潘
 		</div>
 		<div class="col-sm-2 col-md-2 col-xs-2">
 		哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
-		哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+		哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
 		</div>
 		<div class="col-sm-9 col-md-9 col-xs-9">
 			选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vf选的vfvk选的vfvk
@@ -89,11 +142,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-1 col-md-1 col-xs-1">
-			阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿潘
+			阿潘阿潘阿潘阿潘阿潘阿阿潘阿潘阿潘阿潘阿潘阿潘阿潘阿阿潘阿潘
 		</div>
 		<div class="col-sm-2 col-md-2 col-xs-2">
 		哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
-		哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+		哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
 		</div>
 		<div class="col-sm-9 col-md-9 col-xs-9">
 			选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选的vfvk选

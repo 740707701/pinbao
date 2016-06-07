@@ -1,5 +1,5 @@
 define(["app"],function(app){
-	app.directive("bootstrap",[function(){
+	app.directive("bootstrap",[function($uibModal){
 		return {
 			restrict:"E",
 			templateUrl:"../directive/html/bootstrap.html",
@@ -111,18 +111,18 @@ define(["app"],function(app){
 				    return '';
 				};
 				//pager
-				$scope.totalItems = 64;
+				/*$scope.totalItems = 64;
 				$scope.currentPage = 4;
 				$scope.setPage = function(pageNo){
 					$scope.currentPage = pageNo;
-				};
+				};*/
 
-				$scope.pageChanged = function(){
+				/*$scope.pageChanged = function(){
 					console.log("Page channge to:"+$scope.currentPage);
-				};
+				};*/
 
 				$scope.maxSize = 5;
-				$scope.bigTotalTtems = 175;
+				$scope.bigTotalItems = 105;
 				$scope.bigCurrentPage = 1;
 
 				//tabs
@@ -139,6 +139,71 @@ define(["app"],function(app){
 
 				  $scope.model = {
 				    name: 'Tabs'
+				  };
+
+				  //Collapsed
+				  $scope.isCollapsed = false;
+
+				  //Modal
+				 /* $scope.itemsModal = ['item1','item2','item3'];
+				  $scope.animationsEnabled = true;
+				  $scope.open = function(size){
+				  	var modelInstance = $uibModal.open({
+				  		animation:$scope.animationsEnabled,
+				  		templateUrl:'myModalContent.html',
+				  		controller:'ModalInstanceCtrl',
+				  		size:size,
+				  		resolve:{
+				  			items:function(){
+				  				return $scope.items;
+				  			}
+				  		}
+				  	});
+
+				  	modelInstance.result.then(function(selectedItem){
+				  		$scope.selected = selectedItem;
+				  	},function(){
+				  		console.log("model dismissed at :"+new Date());
+				  	});
+
+				  };
+				  $scope.toggleAnimation = function(){
+				  	$scope.animationEnabled = !$scope.animationsEnabled;
+				  };*/
+				  
+
+				  //progressbar
+				  $scope.max = 200;
+				  $scope.random = function(){
+				  	var value = Math.floor(Math.random()*100+1);
+				  	var type;
+				  	if(value<25){
+				  		type = "success";
+				  	}else if(value<50){
+				  		type = "info";
+				  	}else if(value<75){
+				  		type = "warning";
+				  	}else{
+				  		type = "danger"
+				  	};
+				  	$scope.showWarning = type == "danger" || type ==="warning";
+				  	$scope.dynamic = value;
+				  	$scope.type = type;
+				  };
+				  $scope.random();
+
+				  //alert
+				  $scope.alerts = [
+				  	{type:"danger",msg:"numberone alert "},
+				  	{type:"success",msg:"sucess alert "}
+				  ];
+
+				  $scope.addAlert = function(){
+				  	$scope.alerts.push({msg:"Another alert!"});
+				  };
+
+				  $scope.closeAlert = function(index){
+				  	$scope.alerts.splice(index,1);
 				  };
 
 			}
