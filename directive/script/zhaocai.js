@@ -100,28 +100,28 @@ define(["app",
 				$scope.getCollects();*/
 
 				$scope.addJobs = function(){
-					resumeService.addJobs("qq","大专","3年","男")
+					resumeService.addJobs("qq","大专","3年","男","php")
 					.success(function(data){
 						console.log("addJobs",data);
 					})
 				};
-				//$scope.addJobs();
+				$scope.addJobs();
 
 				$scope.editJob = function(){
-					resumeService.editJob(113,"qq","本科","2年","女")
+					resumeService.editJob(113,"qq","本科","2年","女","web")
 					.success(function(data){
 						console.log("editJob",data);
 					})
 				};
-				//$scope.editJob();
+				$scope.editJob();
 
-				/*$scope.jobDetail = function(){
+				$scope.jobDetail = function(){
 					resumeService.jobDetail(113)
 					.success(function(data){
 						console.log("jobDetail",data);
 					})
 				};
-				$scope.jobDetail();*/
+				$scope.jobDetail();
 
 				$scope.getStatus = function(){
 					resumeService.status()
@@ -131,14 +131,14 @@ define(["app",
 				};
 				$scope.getStatus();
 
-				/*$scope.getType = function(){
+				$scope.getType = function(){
 					resumeService.types()
 					.success(function(data){
 						console.log("getType",data);
 					})
 				};
 				$scope.getType();
-				*/
+				
 				$scope.getSites = function(){
 					resumeService.sites()
 					.success(function(data){
@@ -153,7 +153,7 @@ define(["app",
 						console.log("addSites",data);
 					})
 				};
-				//$scope.addSites();
+				//scope.addSites();
 			}
 		};
 	}]);
