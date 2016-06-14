@@ -119,8 +119,30 @@
 <button type="button" class="btn btn-default" ng-click="addAlert()">Add alert</button>
 <uib-alert templateUrl="alert.html">A happly alert!</uib-alert>
 
+<p>Modal</p>
+<button type="button" class="btn btn-default" ng-click="open()">open me!</button>
+<button type="button" class="btn btn-default" ng-click="open('lg')">Lager modal</button>
+<button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button>
+<button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{animationaEnabled}})</button>
 
-
+<uib-modal templateUrl="myModalContent.html">
+	<div class="modal-header">
+	    <h3 class="modal-title">I'm a modal!</h3>
+	</div>
+	<div class="modal-body">
+	    <ul>
+	        <li ng-repeat="item in items">
+	            <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+	        </li>
+	    </ul>
+	    Selected: <b>{{ selected.item }}</b>
+	</div>
+	<div class="modal-footer">
+	    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+	    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+	</div>
+</uib-modal>
+<div ng-show="selected">Selection from a modal:{{selected}}</div>
 
 <p>布局</p>
 <span style="color:red">contriner-fluid 是指流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局流式布局</span>
