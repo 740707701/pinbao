@@ -9,7 +9,8 @@ define(["angular",
 	"angularBootstrapTpls",
 	"angularValidation",
 	"angularValidationRule",
-	"angualrUiSelect"
+	"angualrUiSelect",
+	"angularColorpicker"
 	],function(_0,_1,_2,cookie,$,_6,_7,_8){
 	var myApp = angular.module("myApp",["ngRoute",
 										"ngSanitize",
@@ -18,7 +19,8 @@ define(["angular",
 										"ui.bootstrap.tpls",
 										"validation",
 										"validation.rule",
-										"ui.select"
+										"ui.select",
+										"colorpicker.module"
 										]
 		);
 	return myApp;

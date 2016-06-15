@@ -15,6 +15,7 @@ requirejs.config({
 		angularBootstrapTpls:"bower_components/angular-bootstrap/ui-bootstrap-tpls",
 		angualrUiSelect:"bower_components/angular-ui-select/dist/select",
 		bootstrap:"bower_components/bootstrap/dist/js/bootstrap",
+		angularColorpicker:"bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module",
 
 		app:"script/app",
 		route:"script/route",
@@ -63,7 +64,8 @@ requirejs.config({
 		"angularValidationRule":["angular"],
 		"angularBootstrap":["angular"],
 		"angularBootstrapTpls":["angular"],
-		"angualrUiSelect":["angular"]
+		"angualrUiSelect":["angular"],
+		"angularColorpicker":["angular"]
 	}
 });
 //开始逻辑
