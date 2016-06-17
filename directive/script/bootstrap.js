@@ -223,6 +223,26 @@ define(["app"],function(app){
 				  };*/
 
 
+				  //Accordion 
+				  $scope.oneAtATime = true;
+				  $scope.groups = [
+				  	{
+				  		title:"this is num two title",
+				  		content:"this is num two content"
+				  	},
+				  	{
+				  		title:"num three title",
+				  		content:"num three content"
+				  	}
+				  ];
+
+				  $scope.status = {
+				  	isCustomHeaderOpen : false,
+				  	isFirstOpen : true,
+				  	isFirstDisabled : false
+				  };
+
+
 			}
 		}
 	}])
